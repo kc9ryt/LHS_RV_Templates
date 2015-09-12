@@ -86,7 +86,7 @@ body{
     font-weight: 800;
 	width: 100%;
 	line-height: 110%;
-	font-size: 100px;
+	font-size: 80px;
 	text-align: center;
     color:#fff; 
     text-transform: uppercase;
@@ -131,7 +131,7 @@ body{
 
 .name {
     font-family: 'Covered By Your Grace', cursive;
-    font-size: 100px;
+    font-size: 80px;
     color:#fff;
 }
 
