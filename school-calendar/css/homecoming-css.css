@@ -307,7 +307,7 @@ p.time {
         }
         .cornered {
             width: 1220px;
-            border-bottom: 220px solid #1f99d5;
+            border-bottom: 220px solid #000000;
             border-right: 120px solid transparent;
         }
         .skew img {
