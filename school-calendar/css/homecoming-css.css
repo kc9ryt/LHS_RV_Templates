@@ -248,7 +248,7 @@ p.time {
         }
         .cornered {
             width: 460px;
-            border-bottom: 80px solid #1f99d5;
+            border-bottom: 80px solid #000000;
             border-right: 40px solid transparent;
         }
 
@@ -278,7 +278,7 @@ p.time {
         }
         .cornered {
             width: 610px;
-            border-bottom: 110px solid #1f99d5;
+            border-bottom: 110px solid #000000;
             border-right: 60px solid transparent;
         }
 
