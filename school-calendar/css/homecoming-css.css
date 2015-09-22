@@ -166,7 +166,7 @@ p.day {
     height:65%;
     line-height: 98%;
     margin-top: 0px;
-    color: #fff;
+    color: #000000;
     font-size:70px;
 }
 
@@ -178,7 +178,7 @@ p.month {
     margin-top: 0px;
     margin-bottom: 0px;
     line-height: 90%;
-    color: #feb423;
+    color: #000000;
 }
 
 p.title {
@@ -189,7 +189,7 @@ p.title {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 5%;
-    color: #fff;
+    color: #000000;
 }
 
 p.time {
@@ -201,7 +201,7 @@ p.time {
     margin-top: 0px;
     margin-left: 5%;
     line-height: 90%;
-    color: #1f99d5;
+    color: #000000;
 }
 
 /*right content images*/
