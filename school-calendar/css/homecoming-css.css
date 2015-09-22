@@ -75,7 +75,7 @@ p.header {
     margin-top: 0px;
     margin-left: 50px;
     line-height: 165%;
-    color: #fff;
+    color: #DAA520;
 }
 
 .cornered {
@@ -84,7 +84,7 @@ p.header {
     left: 5%;
     width: 380px;
     height: 0px;
-    border-bottom: 62px solid #1f99d5;
+    border-bottom: 62px solid #000000;
     border-right: 32px solid transparent;
     -webkit-box-shadow: -7px 7px 5px 0px rgba(0, 0, 0, 0.2);
 }
