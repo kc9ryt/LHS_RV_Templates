@@ -1,0 +1,9 @@
+*.log
+src/components/
+node_modules/
+coverage/
+src/config/config.js
+src/locales
+tmp
+src/*-e2e.html
+reports/

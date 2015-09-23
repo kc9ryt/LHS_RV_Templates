@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Widget Settings</title>
+
+  <link rel="stylesheet" href="css/settings.min.css"/>
+
+  <style type="text/css">
+    body, html {
+      background: transparent;
+    }
+
+    label[for="url"] {
+      display: block;
+    }
+  </style>
+</head>
+<body ng-app="risevision.widget.weather.settings" ng-controller="settingsController">
+  <div class="widget">
+    <div class="overlay"></div>
+    <div class="settings">
+      <div class="settings-center">
+        <div class="wrapper container modal-content" ng-controller="weatherSettingsController" ng-cloak>
+          <div class="modal-header">
+            <h2> {{"weather.settings" | translate }}
+              <button type="button" class="close" ng-click="closeSettings()">
+                <span>&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+            </h2>
+            <div class="sticky-wrapper">
+              <widget-button-toolbar
+                save="saveSettings()" cancel="closeSettings()" disable-save="settingsForm.$invalid || !termsAccepted"
+                help="http://help.risevision.com/#/user/content/weather-widget"
+                contribute="https://github.com/Rise-Vision/widget-weather"></widget-button-toolbar>
+            </div>
+          </div>
+          <form role="form" name="settingsForm">
+            <div class="form-group">
+              <div class="checkbox">
+                <label for="terms">
+                  <input id="terms" type="checkbox" ng-model="settings.additionalParams.terms" />{{ "weather.terms.label" | translate }}
+                </label>
+              </div>
+              <p id="layout-error" class="text-danger" ng-show="!termsAccepted">
+                {{"weather.terms.error" | translate}}
+              </p>
+            </div>
+            <div class="section">
+              <h5>{{"widgets.layout.heading" | translate}}</h5>
+              <div class="form-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="current" ng-model="settings.additionalParams.layout">
+                  </label>
+                  <img src="img/thumbs/current-vertical.png" class="img-thumbnail" />
+                  <img src="img/thumbs/current-horizontal.png" class="img-thumbnail" />
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="three-day" ng-model="settings.additionalParams.layout">
+                  </label>
+                  <img src="img/thumbs/three-day-vertical.png" class="img-thumbnail" />
+                  <img src="img/thumbs/three-day-horizontal.png" class="img-thumbnail" />
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" value="current-and-three-day" ng-model="settings.additionalParams.layout">
+                  </label>
+                  <img src="img/thumbs/current-and-three-day-vertical.png" class="img-thumbnail" />
+                  <img src="img/thumbs/current-and-three-day-horizontal.png" class="img-thumbnail" />
+                </div>
+                <div class="radio">
+                  <label for="url">
+                    <input type="radio" value="custom" ng-model="settings.additionalParams.layout">{{"widgets.layout.url" | translate}}
+                    <url-field name="layoutUrl" url="settings.additionalParams.layoutURL" ng-model="urlentry" hide-label="true" valid></url-field>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="section" ng-show="showCurrent">
+              <h5>{{"weather.current-temp.font.label" | translate}}</h5>
+              <div class="form-group">
+                <font-setting id="current-temp-font" font-data="settings.additionalParams.currentTempFont" hide-alignment="true" preview-text="{{'weather.current-temp.font.text' | translate}}">
+                </font-setting>
+              </div>
+            </div>
+            <div class="section" ng-show="showForecast">
+              <h5>{{"weather.forecast-temp.font.label" | translate}}</h5>
+              <div class="form-group">
+                <font-setting id="forecast-temp-font" font-data="settings.additionalParams.forecastTempFont" hide-alignment="true" preview-text="{{'weather.forecast-temp.font.text' | translate}}">
+                </font-setting>
+              </div>
+            </div>
+            <div class="section" ng-show="showForecast">
+              <h5>{{"weather.forecast-day.font.label" | translate}}</h5>
+              <div class="form-group">
+                <font-setting id="forecast-day-font" font-data="settings.additionalParams.forecastDayFont" hide-alignment="true" preview-text="{{'weather.forecast-day.font.text' | translate}}">
+                </font-setting>
+              </div>
+            </div>
+            <div class="section">
+              <h5>{{"weather.address.address.label" | translate}}</h5>
+              <div class="form-group">
+                <label for="address">{{"weather.address.address.label" | translate}}</label>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <select id="address" class="form-control" ng-model="settings.additionalParams.address" >
+                      <option value="geolocation">{{"weather.address.address.geolocation" | translate}}</option>
+                      <option value="display">{{"weather.address.address.display" | translate}}</option>
+                      <option value="custom">{{"weather.address.address.custom" | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-show="showCustomAddress">
+                <label for="custom-address">{{"weather.address.address.custom-address" | translate}}</label>
+                <input id="custom-address" name="customAddress" class="text-field form-control" type="text" ng-model="settings.additionalParams.customAddress" ng-required="showCustomAddress" />
+                <p id="custom-address-error" class="text-danger" ng-show="settingsForm.customAddress.$error.required">
+                  {{"weather.address.address.error" | translate}}
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="description">{{"weather.address.description.label" | translate}}</label>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <select id="description" class="form-control" ng-model="settings.additionalParams.description">
+                      <option value="none">{{"weather.address.description.none" | translate}}</option>
+                      <option value="service">{{"weather.address.description.service" | translate}}</option>
+                      <option value="custom">{{"weather.address.description.custom" | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-show="showCustomDescription">
+                <label for="custom-description">{{"weather.address.description.custom-description" | translate}}</label>
+                <input id="custom-description" name="customDescription" class="text-field form-control" type="text" ng-model="settings.additionalParams.customDescription" ng-required="showCustomDescription" />
+                <p id="custom-description-error" class="text-danger" ng-show="settingsForm.customDescription.$error.required">
+                  {{"weather.address.description.error" | translate}}
+                </p>
+              </div>
+              <div class="form-group">
+                <label>{{"widgets.font" | translate}}</label>
+                <font-setting id="address-font" font-data="settings.additionalParams.addressFont" hide-alignment="true" preview-text="{{'weather.address.font.text' | translate}}">
+                </font-setting>
+              </div>
+            </div>
+            <div class="section">
+              <h5>{{"weather.humidity-wind.heading" | translate}}</h5>
+              <div class="checkbox">
+                <label for="show-humidity">
+                  <input id="show-humidity" type="checkbox" ng-model="settings.additionalParams.showHumidity" />{{"weather.humidity-wind.show" | translate}}
+                </label>
+              </div>
+              <div class="form-group" ng-show="showHumidity">
+                <label for="wind-speed">{{"weather.humidity-wind.wind-speed.label" | translate}}</label>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <select id="wind-speed" class="form-control" ng-model="settings.additionalParams.windSpeed">
+                      <option value="kph">{{"common.units.kph" | translate}}</option>
+                      <option value="mph">{{"common.units.mph" | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-show="showHumidity">
+                <label>{{"widgets.font" | translate}}</label>
+                <font-setting id="humidity-font" font-data="settings.additionalParams.humidityFont" hide-alignment="true" preview-text="{{'weather.humidity-wind.font.text' | translate}}">
+                </font-setting>
+              </div>
+            </div>
+            <div class="section">
+              <h5>{{"weather.unit.heading" | translate}}</h5>
+              <div class="form-group">
+                <label for="unit">{{"weather.unit.label" | translate}}</label>
+                <div class="row">
+                  <div class="col-xs-6 col-md-3">
+                    <select id="unit" class="form-control" ng-model="settings.additionalParams.unit">
+                      <option value="celsius">{{"common.units.celsius" | translate}}</option>
+                      <option value="fahrenheit">{{"common.units.fahrenheit" | translate}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <background-setting id="background" background="settings.additionalParams.background"></background-setting>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script src="js/settings.min.js"></script>
+
+  <!-- build:e2egadgets -->
+  <script src="//rvashow2.appspot.com/gadgets/gadgets.min.js"></script>
+  
+
+  <script src="//s3.amazonaws.com/rise-common/scripts/i18next/i18next.min.js"></script>
+</body>
+</html>
