@@ -53,8 +53,13 @@ form { margin-bottom: 1em; }
 	font-family: 'Raleway', cursive;
     font-weight:100;
     font-stretch:normal;
+<<<<<<< HEAD
     font-size:80px;
     padding: 20px;
+=======
+    font-size:53px;
+    padding: 5px;
+>>>>>>> fbee64db902be7c480dfdda4a03b252f206aa063
 }
 .Weatherflat a { color: #888; }
 .Weatherflat a:hover {
