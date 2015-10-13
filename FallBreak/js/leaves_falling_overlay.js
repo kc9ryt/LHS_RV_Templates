@@ -11,7 +11,7 @@ var rotation = 1;//define rotation of leaves
 var rotationTrue = 1//whether leaves rotate (1) or not (0)
 var numberOfLeaves = 30;//define number of leaves
 var size = 10;//general size of leaves, final size is calculated randomly (with this number as general parameter)
-var typeOfLeaf = 1;//type of leav, 0 - maple leaf, 1 - saw leaf, 2 - normal leaf, 3 all types together
+var typeOfLeaf = 3;//type of leav, 0 - maple leaf, 1 - saw leaf, 2 - normal leaf, 3 all types together
 var fps = 60;
 
 Ypos=new Array();
