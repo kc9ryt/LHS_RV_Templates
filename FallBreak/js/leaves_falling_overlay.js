@@ -4,14 +4,14 @@ Leaf1 = allTypeOfLeaves[0] = "images/leaf.png";//path to the image you will use
 Leaf2 =new Image();
 Leaf2 = allTypeOfLeaves[1] ="images/leaf1.png";//you can have up to 3 different kind of leaves
 Leaf3 =new Image();
-Leaf3 = allTypeOfLeaves[2] ="images/leaf2.png","images/leaf.png","images/leaf1.png";//possible to add more
+Leaf3 = allTypeOfLeaves[2] ="images/leaf2.png";//possible to add more
 
 var speedC = 1;//here you can define speed of leaves
 var rotation = 1;//define rotation of leaves
 var rotationTrue = 1//whether leaves rotate (1) or not (0)
 var numberOfLeaves = 10;//define number of leaves
 var size = 40;//general size of leaves, final size is calculated randomly (with this number as general parameter)
-var typeOfLeaf = 2;//type of leav, 0 - maple leaf, 1 - saw leaf, 2 - normal leaf, 3 all types together
+var typeOfLeaf = 0;//type of leav, 0 - maple leaf, 1 - saw leaf, 2 - normal leaf, 3 all types together
 var fps = 60;
 
 Ypos=new Array();
