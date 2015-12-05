@@ -3,7 +3,7 @@
 <head>
 <meta charset=utf-8 />
 <!-- *** HTML Template Meta *** -->
-<title>Events | HTML Digital Signage Template</title>
+<title>School Directory</title>
 <meta name="description" content="The Events Template was created to display a series of custom events that rotate into the screen view one at a time." />
 
 <!-- Schema.org markup for Google+ -->
@@ -48,16 +48,9 @@
     <div id="background">
         <img src="images/background-buildings-1920.jpg">
     </div>
-    <!-- Published Spreadsheet Details -->
-<google-sheets id="sheet" 
-               key="1vjhrpyfJ23zkxpkzr3U4ZeDYRKmvi6Gwr1sRB8cfAY4"
-               gid="0"
-               rows="{{rows}}"
-               published>
-</google-sheets>
-    
+    <!-- Published Spreadsheet Details -->   
 <!--Header-->      
-<div id="header">UPCOMIG EVENTS</div>
+<div id="header">DIRECTORY</div>
  
 <!--Text Transition-->  
 <div  id="content">
@@ -68,17 +61,9 @@
 
          <section>
 
-             <template id="rows" bind>
 
 <!-- Information from Spreadsheet Rows -->
-                <template repeat="{{rows}}">
-                    <div class="slides">
-                        <h2 class="date">{{gsx$date.$t}}</h2>
-                        <h2 class="event">{{gsx$event.$t}}</h2>
-                        <p class="desc">{{gsx$description.$t}}</p>
-                    </div>
-                 </template>
-            </template>
+                    
 
         </section>
 
@@ -86,8 +71,10 @@
 </div>
     
 <!--Logo-->      
+<div  id="logo">
+    <h2>Lebanon High School</h2>
+</div>
 
-<!--Footer Icons-->   
 </body> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="script.js"></script>
