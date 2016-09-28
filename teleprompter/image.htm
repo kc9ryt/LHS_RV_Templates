@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>MirrorScript free teleprompter software</title>
+<meta name="description" content="Free web based teleprompter which works in all operating systems (Windows, iOS, Android, MacOS, etc.) and devices such as PCs, laptops, tablets, phones, and more." />
+
+		<meta name="keywords" content="free teleprompter, teleprompter, teleprompter software">
+
+		<!-- Mobile Specific Meta Tags -->
+		<meta name="viewport" content="width=1024, initial-scale=1, maximum-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style-v=0.6.1.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<script type="text/javascript" src="js/Blob.js"></script>
+		<script type="text/javascript" src="js/FileSaver.min.js"></script>
+	</head>
+	<body id="gui">
+		<header>
+			<h1><i class="icon icon-bullhorn"></i> <span class="clock">00:00:00</span></h1>
+			<nav>
+                <div class="buttons">
+					<a class="button small icon-undo reset" href="#" onclick="return false;"></a>
+					<a class="button small icon-text-width flipx" href="#" onclick="return false;"></a>
+					<a class="button small icon-text-height flipy" href="#" onclick="return false;"></a>
+					<a class="button icon-play play active" href="#" onclick="return false;"></a>
+					<a class="button small extra-open glyphicon glyphicon-folder-open" href="#" onclick="return false;"></a>
+					<a class="button small extra-save glyphicon glyphicon-floppy-save" href="#" onclick="return false;"></a>
+				</div>
+				<div class="sliders">
+					<label class="font_size_label">Font Size <span>(60)</span>:&nbsp; <div class="font_size slider"></div></label><br>
+					<label class="speed_label">Speed <span>(35)</span>:&nbsp; <div class="speed slider"></div></label>
+				</div>
+                <div class="colors">
+                    <input id="text-color-picker" class="color {hash:true,caps:true,valueElement:'text-color'}"><input type="hidden" id="text-color" value="#ffffff">
+                    <input id="background-color-picker" class="color {hash:true,caps:true,valueElement:'background-color'}"><input type="hidden" id="background-color" value="#141414">
+                </div>
+			</nav>
+		</header>
+		<article>
+			<div class="overlay">
+				<div class="top"></div>
+				<div class="bottom"></div>
+			</div>
+			<div class="teleprompter" id="teleprompter" contenteditable>
+				Oh, hello there! I didn't see you come in. I was too busy reading off this teleprompter. It does some pretty cool things:
+				<br><br>
+				You can edit the text right on the page. It'll even save it for you if you happen to leave the page. That's some smart thinking.
+				<br><br>
+				If you're using an iPad, you can add a shortcut to your home screen for full screen awesomeness.
+				<br><br>
+				You can also use some handy keyboard shortcuts to speed things up. You can adjust the speed and font size at the top right as well. We're also experimenting with ways to flip the text around for you fancy folks using mirrors.
+				<br><br>
+				The keyboard shortcuts are as follows:
+				<br><br>
+				Up:  Increases Font Size
+				<br><br>
+				Down:  Decreases Font Size
+				<br><br>
+				Left:  Slows Down Teleprompter
+				<br><br>
+				Right:  Speeds Up Teleprompter
+				<br><br>
+				Space:  Starts / Stops Teleprompter
+				<br><br>
+				Escape: Resets Everything
+
+				
+			</div>
+			<i class="icon-play marker"></i>
+		</article>
+		<footer>
+
+		</footer>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<script src="js/jquery.timer.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+        <script src="js/jscolor.js"></script>
+		<script src="js/script.js?v=0.6.1"></script>
+	</body>
+</html>
+
+<!-- Localized -->
