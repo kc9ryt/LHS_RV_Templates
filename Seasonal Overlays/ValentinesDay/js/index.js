@@ -2,7 +2,7 @@ var HeartsBackground = {
   heartHeight: 60,
   heartWidth: 64,
   hearts: [],
-  heartImage: 'http://i58.tinypic.com/ntnw5.png',
+  heartImage: 'img/ntnw5.png',
   maxHearts: 8,
   minScale: 0.4,
   draw: function() {
