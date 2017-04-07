@@ -44,6 +44,21 @@ html,body {
 	margin: 0 auto;
 	line-height: 2em;
 }
+
+.header-info3{
+	position: absolute;
+	top: 90%;
+	text-align: center;
+	color:#FFFFFF;
+}
+
+.header-info3 p{
+	font-size: 20px;
+	color: #FFF;
+	width: 100%;
+	margin: 0 auto;
+	line-height: 2em;
+}
 .d-arrow a{
 	position: absolute;
 	background:url(../images/d-arrow.png) no-repeat 0px 0px;
