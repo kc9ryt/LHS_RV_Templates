@@ -26,7 +26,7 @@ html,body {
 }
 .header-info2{
 	position: absolute;
-	top: 60%;
+	top: 50%;
 	text-align: center;
 	color:#FFFFFF;
 }
@@ -38,10 +38,12 @@ html,body {
 	text-transform: uppercase;
 }
 .header-info2 p{
-	font-size: 30px;
+	font-size: 45px;
 	color: #FFF;
 	width: 100%;
 	margin: 0 auto;
+	margin-left: 15;
+	text-align: center;
 	line-height: 2em;
 }
 
