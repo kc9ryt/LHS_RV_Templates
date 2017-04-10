@@ -97,7 +97,7 @@ $.getJSON(url, function(data) {
   ** Change to descending order
   ** for (var i = entry.length - 1; i >= 0; i -= 1) {
    */
-  for (var i = 0; i < entry.length; i++) {
+  for (var i = 0; i < 1; i++) {
     //html += '<tr>';
     html += '<a href="#"><img src="' + entry[i]['gsx$image']['$t'] + '" alt="" /></a>';
     
