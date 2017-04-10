@@ -30,14 +30,14 @@ $.getJSON(url, function(data) {
   $('.name').html(html);
 });
 
-//age
+//tod
 $.getJSON(url, function(data) {
 
   // set global html variable
   var html = '';
 
   // build table headings
-  html += '<table cellpadding=10 cellspacing=0 border=1>';
+  //html += '<table cellpadding=10 cellspacing=0 border=1>';
   
   // loop to build html output for each row
   var entry = data.feed.entry;
@@ -46,14 +46,14 @@ $.getJSON(url, function(data) {
   ** for (var i = entry.length - 1; i >= 0; i -= 1) {
    */
   for (var i = 6; i < 7; i++) {
-    html += '<tr>';
-    html += '<td>' + entry[i]['gsx$age']['$t'] + '</td>';
-    html += '</tr>';
+  //  html += '<tr>';
+    html += entry[i]['gsx$tod']['$t'];
+  //  html += '</tr>';
   }
-  html += '</table>';
+  //html += '</table>';
 
   // output html
-  $('.age').html(html);
+  $('.tod').html(html);
 });
 
 //Obituary
