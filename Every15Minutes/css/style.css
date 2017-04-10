@@ -15,7 +15,7 @@ html,body {
 .header{
 	background:url(../images/background3.jpg) no-repeat 0px 0px;
 	background-size: cover;
-	min-height: 680px;
+	min-height: 900px;
 	position:relative;
 }
 .header-info{
