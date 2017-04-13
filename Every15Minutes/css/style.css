@@ -20,13 +20,13 @@ html,body {
 }
 .header-info{
 	position: absolute;
-	top: 14%;
+	top: 10%;
 	width: 1440px;
 	text-align: center;
 }
 .header-info2{
 	position: absolute;
-	top: 50%;
+	top: 46%;
 	text-align: center;
 	color:#FFFFFF;
 }
@@ -49,7 +49,7 @@ html,body {
 
 .header-info3{
 	position: absolute;
-	top: 95%;
+	top: 91%;
 	text-align: center;
 	color:#FFFFFF;
 }
@@ -64,7 +64,7 @@ html,body {
 
 .header-info4{
 	position: absolute;
-	top: 43%;
+	top: 39%;
 	text-align: center;
 	color: #FFFFFF;
 	width: 1440px;
@@ -84,7 +84,7 @@ html,body {
 	width:45px;
 	height:45px;
 	display:block;
-	top: 90%;
+	top: 85%;
 	left: 48%;
 }
 .d-arrow a:hover{
