@@ -20,13 +20,13 @@ html,body {
 }
 .header-info{
 	position: absolute;
-	top: 10%;
+	top: 5%;
 	width: 1440px;
 	text-align: center;
 }
 .header-info2{
 	position: absolute;
-	top: 46%;
+	top: 41%;
 	text-align: center;
 	color:#FFFFFF;
 }
@@ -49,7 +49,7 @@ html,body {
 
 .header-info3{
 	position: absolute;
-	top: 91%;
+	top: 86%;
 	text-align: center;
 	color:#FFFFFF;
 }
@@ -64,7 +64,7 @@ html,body {
 
 .header-info4{
 	position: absolute;
-	top: 39%;
+	top: 34%;
 	text-align: center;
 	color: #FFFFFF;
 	width: 1440px;
