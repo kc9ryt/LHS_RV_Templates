@@ -44,7 +44,6 @@ html,body {
 	margin: 0 auto;
 	margin-left: 15;
 	text-align: center;
-	line-height: 2em;
 }
 
 .header-info3{
@@ -59,7 +58,6 @@ html,body {
 	color: #FFF;
 	width: 100%;
 	margin: 0 auto;
-	line-height: 2em;
 }
 
 .header-info4{
@@ -75,7 +73,6 @@ html,body {
 	color: #FFF;
 	width: 1440px;
 	margin: 0 auto;
-	line-height: 2em;
 	text-align: center;
 }
 .d-arrow a{
