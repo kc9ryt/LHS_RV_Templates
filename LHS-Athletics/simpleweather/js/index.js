@@ -11,7 +11,8 @@ $(document).ready(function() {
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
       html += '<li class="currently">'+weather.currently+'</li>';
       //html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li>';
-      html += '<br>'
+      html += '<br>';
+      html += '<br>';
       html += '<li>'+weather.high+' / '+weather.low+'</li>';
       html += '</ul>'
       html += '<h6>High/Low</h6>'
