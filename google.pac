@@ -10,5 +10,5 @@ if (dnsDomainIs (host, "youtube.com")) { return proxy_yes; }
 if (dnsDomainIs (host, "yt3.ggpht.com")) { return proxy_yes; }
 if (dnsDomainIs (host, "yt3.gght.com")) { return proxy_yes; }
 if (dnsDomainIs (host, "ytimg.com")) { return proxy_yes; }
-return proxy_no;
+return proxy_yes;
 }
